@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	    int opcion;
+	    int opcion, longitud, maxX, maxY;
         Scanner entrada = new Scanner(System.in);
 
         do {
@@ -18,8 +18,27 @@ public class Main {
             opcion = entrada.nextInt();
             entrada.nextLine();
 
-            // TODO Completa el programa con un switch para realizar lo indicado en el menú.
-            //      Usa los métodos estáticos que ya hay implementadas y que puedes ver debajo.
+            switch (opcion) {
+                case 1:
+                    longitud = pedirNumero(entrada, "Dame la longitud del lado: ");
+                    dibujarCuadrado(longitud);
+                    break;
+                case 2:
+                    longitud = pedirNumero(entrada, "Dame la altura del triángulo: ");
+                    dibujarTrianguloRectangulo(longitud);
+                    break;
+                case 3:
+                    maxX = pedirNumero(entrada, "Dame la longitud máxima en el eje X: ");
+                    maxY = pedirNumero(entrada, "Dame la longitud máxima en el eje Y: ");
+                    dibujarPuntos(maxX, maxY);
+                    break;
+                case 0:
+                    System.out.println("Pos na tio, ta luego luca.");
+                    break;
+                default:
+                    System.out.println("Cheee, la opción " + opcion + " no exite listo.");
+
+            }
 
             System.out.print("Intro para continuar...");
             entrada.nextLine();
